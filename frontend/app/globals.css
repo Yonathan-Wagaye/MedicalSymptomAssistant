@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #e8e8e8;
+  --muted: #0f0f0f;
+  --muted-foreground: #6b6b6b;
+  --surface: #080808;
+  --surface-elevated: #0d0d0d;
+  --surface-sidebar: #0a0a0a;
+  --border: #1e1e1e;
+  --primary: #e8e8e8;
+  --primary-foreground: #050505;
+  --ring: #4b5563;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-sidebar: var(--surface-sidebar);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #050505;
+    --foreground: #e8e8e8;
+    --muted: #0f0f0f;
+    --muted-foreground: #6b6b6b;
+    --surface: #080808;
+    --surface-elevated: #0d0d0d;
+    --surface-sidebar: #0a0a0a;
+    --border: #1e1e1e;
+    --primary: #e8e8e8;
+    --primary-foreground: #050505;
+    --ring: #4b5563;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

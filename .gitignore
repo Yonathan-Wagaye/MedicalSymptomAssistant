@@ -1,0 +1,35 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Serialized model artifacts
+*.pkl
+
+# Logs
+**/logs/
+
+# Cached data downloads (MedlinePlus XML, Kaggle, etc.)
+backend/data/
+
+# Alembic (empty — schema managed via SQL init scripts)
+backend/alembic/versions/
+
+# Node / Frontend (root-level safety net; frontend/.gitignore handles the rest)
+node_modules/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
