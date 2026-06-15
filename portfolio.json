@@ -1,0 +1,43 @@
+{
+  "title": "Medical Symptom Assistant",
+  "description": "A conversational symptom checker powered by RAG. Users describe symptoms in plain language and receive AI responses grounded in MedlinePlus, WHO, and curated medical datasets.",
+  "detailDescription": "Medical Symptom Assistant is an educational health information tool that combines hybrid retrieval-augmented generation with safety-first urgency classification. It helps users explore possible conditions and follow-up questions using authoritative public health sources — not as a substitute for professional medical care.",
+  "category": ["Web", "ML/Data"],
+  "techStack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "FastAPI",
+    "PostgreSQL",
+    "pgvector",
+    "OpenAI",
+    "SentenceTransformers",
+    "Tailwind CSS"
+  ],
+  "features": [
+    {
+      "title": "Conversational Symptom Q&A",
+      "description": "Users describe symptoms in natural language and receive structured responses with possible conditions, follow-up questions, cited sources, and clear medical disclaimers."
+    },
+    {
+      "title": "Hybrid RAG Retrieval",
+      "description": "Combines pgvector cosine similarity and PostgreSQL full-text search in parallel, then merges results with Reciprocal Rank Fusion for more relevant medical context."
+    },
+    {
+      "title": "Urgency Classification",
+      "description": "A rule-based pre-retrieval classifier detects red-flag symptoms and vague queries so the assistant can prioritize urgent guidance or ask clarifying questions before generation."
+    },
+    {
+      "title": "Cross-Encoder Reranking",
+      "description": "Locally runs a cross-encoder model to rescore and reorder retrieved passages, improving the quality of context sent to the LLM."
+    },
+    {
+      "title": "Authoritative Data Sources",
+      "description": "Ingests and chunks content from MedlinePlus, WHO fact sheets, outbreak news, and Kaggle symptom-disease datasets into a searchable vector store."
+    },
+    {
+      "title": "Chat Sessions & Feedback",
+      "description": "Persists multi-turn conversations with session history and collects user feedback to support iterative improvements to safety and response quality."
+    }
+  ]
+}
