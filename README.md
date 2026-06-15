@@ -6,18 +6,18 @@ A conversational medical symptom checker powered by Retrieval-Augmented Generati
 
 ```
 ┌─────────────────┐       ┌──────────────────────────────────────────────────┐
-│   Next.js UI    │──────►│  FastAPI Backend                                │
-│   (React 19)    │ REST  │                                                 │
-│   Port 3000     │◄──────│  ┌─────────────┐  ┌───────────────────────────┐ │
+│   Next.js UI    │──────►│  FastAPI Backend                                 │
+│   (React 19)    │ REST  │                                                  │
+│   Port 3000     │◄──────│  ┌──────────────┐  ┌───────────────────────────┐ │
 └─────────────────┘       │  │   Query      │  │   Hybrid Retrieval        │ │
-                          │  │  Classifier  │  │  ┌─────────┐ ┌─────────┐ │ │
-                          │  │ (rule-based) │  │  │pgvector │ │ FTS /   │ │ │
-                          │  └──────┬───────┘  │  │ cosine  │ │ BM25    │ │ │
-                          │         │          │  └────┬────┘ └────┬────┘ │ │
-                          │         ▼          │       └──┬────────┘      │ │
-                          │  ┌─────────────┐   │     RRF Fusion           │ │
-                          │  │  OpenAI     │   │          │               │ │
-                          │  │  GPT-4o-mini│◄──│   Cross-Encoder Rerank   │ │
+                          │  │  Classifier  │  │  ┌─────────┐ ┌─────────┐  │ │
+                          │  │ (rule-based) │  │  │pgvector │ │ FTS /   │  │ │
+                          │  └──────┬───────┘  │  │ cosine  │ │ BM25    │  │ │
+                          │         │          │  └────┬────┘ └────┬────┘  │ │
+                          │         ▼          │       └──┬────────┘       │ │
+                          │  ┌─────────────┐   │     RRF Fusion            │ │
+                          │  │  OpenAI     │   │          │                │ │
+                          │  │  GPT-4o-mini│◄──│   Cross-Encoder Rerank    │ │
                           │  └─────────────┘   └───────────────────────────┘ │
                           │                                                  │
                           │  PostgreSQL 16 + pgvector (Docker)               │
